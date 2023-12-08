@@ -22,8 +22,6 @@
             randnum.add("W1");
             randnum.add("correct");
             Collections.shuffle(randnum);%>
-        <%= session.getAttribute("currentUser")%>
-        <%= session.getAttribute("date")%>
         <h2>Round <%= session.getAttribute("roundNumber")%></h2> <h4>Score: <%= session.getAttribute("currentScore") %></h4>
         <img class="questionPicture" src="${pageContext.request.contextPath}/questionPictures/<%= session.getAttribute("question"+session.getAttribute("roundNumber")+"picture")%>.jpg"/> 
         <p>   <%= session.getAttribute("question"+session.getAttribute("roundNumber")+"desc")%></p>
