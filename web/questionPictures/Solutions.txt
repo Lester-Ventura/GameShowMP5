@@ -1,0 +1,16 @@
+Medium 1 - White to Move: Ra1->Kd8->Ra8->Ra8xRh8
+Medium 2 - White to Move: Rg4xg7+->Kh8->Qf6xh6#
+Medium 3 - White to Move: Ke1->Kh7->c8=Qc8->Rbe2+->Kd1->Rd2+->Kc1
+Medium 4 - Black to Move: Bd6->h2xNg3->Bf3
+Medium 5 - White to Move: Rf2xf7->Be8xRf7->Qh7xBf7
+Medium 6 - Black to Move: Qa8xQd2->Be3xQd2->c6xNb5
+Difficult 1 -White to Move: Qd6xNe5->Qe4->Qd6xQe4->Bc2xQe4->Bh5xf7->Kf8->Bf7xRe8
+Difficult 2 - Black to Move: Rf6xf2->Rf1xRf2->Rf8xRf2->Qe2xRf2->Bb6xQf2
+Difficult 3 - Black to Move: Qc5xc2->Bf5xQc2->Rc8xBc2#
+Difficult 4 - White to Move: Rg7+->KxNh5->Bf3+->Kh4->g3+->Kxh3->Bg2#
+Difficult 5 - Black to Move: Qc2+->Kf3->Rxe3->KxRe3->Qc2xQg2
+Difficult 6 - Black to Move: Nd4+->e3xNd4 ->Rc8+->Kf1->Qc3xRa1
+Difficult 7 - Tennison Gambit - ICBM Variation
+Difficult 8 - Fried-Liver Attack
+Difficult 9 - Stafford Gambit
+Difficult 10 - Blackmar-Diemer Gambit

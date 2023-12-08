@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+	 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	 xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
+	 version="3.1"
+         metadata-complete="false"
+        >
+    <servlet>
+        <servlet-name>QuestionsBanker</servlet-name>
+        <servlet-class>QuestionsBanker</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>QuestionsBanker</servlet-name>
+        <url-pattern>/QuestionsBanker</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>loginPage</servlet-name>
+        <servlet-class>loginPage</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>loginPage</servlet-name>
+        <url-pattern>/loginPage</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>leaderBoardManager</servlet-name>
+        <servlet-class>leaderBoardManager</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>leaderBoardManager</servlet-name>
+        <url-pattern>/leaderBoardManager</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>stateDetection</servlet-name>
+        <servlet-class>stateDetection</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>stateDetection</servlet-name>
+        <url-pattern>/stateDetection</url-pattern>
+    </servlet-mapping>
+   
+    <session-config>
+        <session-timeout>
+            999999
+        </session-timeout>
+    </session-config>
+    <error-page>
+    <exception-type>java.lang.Throwable</exception-type>
+    <location>/error.jsp</location>
+    </error-page>
+    <welcome-file-list>
+        <welcome-file>HomeMenu.jsp</welcome-file>
+    </welcome-file-list>
+</web-app>
