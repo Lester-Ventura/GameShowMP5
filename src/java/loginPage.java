@@ -21,7 +21,6 @@ public class loginPage extends HttpServlet {
                  if(request.getParameter("username").equals("!@#$%$#@!")){
                  session.setAttribute("admin",true);
                  session.setAttribute("currentUser",request.getParameter("username"));
-                 response.addCookie(new Cookie("leader1","bruh"));
                  request.getRequestDispatcher("adminLeaderBoard.jsp").forward(request,response);}
                   else{
                  session.setAttribute("currentUser",request.getParameter("username"));

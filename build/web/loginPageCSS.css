@@ -1,6 +1,17 @@
+html{
+    background-image: url(chessBackground.jpg);
+    height:100%;
+    background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
 body{
     font-size: 20px;
     color: black;
+    height:100%;
+    background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 h1, p {
   margin: 1em auto;
@@ -35,10 +46,6 @@ input[type="text"]{
     margin: 1em auto;
     height: 2em;
     vertical-align: middle;
-}
-.background{
-    background-image: url(chessBackground.jpg);
-    opacity:1;
 }
 .background.content{
     opacity:1;

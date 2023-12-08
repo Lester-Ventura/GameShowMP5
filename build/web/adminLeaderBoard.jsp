@@ -15,11 +15,11 @@
         <form action="leaderBoardManager" method="POST">
             <%  for(int i=1;i-1<20;i++){
                     if(session.getAttribute("leader"+i)!=null)
-                    out.println("<input type=checkbox name=checkrows value="+i+"/>"+session.getAttribute("leader"+i)+" "+session.getAttribute("score"+i)+"<br>");
+                    out.println("<input type=checkbox name=\"checkrows\" value="+i+">"+session.getAttribute("leader"+i)+" "+session.getAttribute("score"+i)+"<br>");
                     else
-                    out.println("<input type=checkbox name=checkrows value="+i+"/>Empty"+"<br>");
+                    out.println("<input type=checkbox name=\"checkrows\" value="+i+">Empty"+"<br>");
                         }%>
-          <input type="submit" value="Remove">
+          <input type="submit" value="remove">
         </form>
     </body>
 </html>

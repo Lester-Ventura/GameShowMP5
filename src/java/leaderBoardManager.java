@@ -17,6 +17,7 @@ public class leaderBoardManager extends HttpServlet {
         try (PrintWriter out = response.getWriter()) {
            HttpSession session = request.getSession();
             //If winner, do this.
+           if(session.getAttribute("victoryFlag")!=null){
             if((boolean)session.getAttribute("victoryFlag")){
                 boolean full=true;
                 String minScore="score1",minLeader="leader1";
@@ -42,19 +43,25 @@ public class leaderBoardManager extends HttpServlet {
                          session.setAttribute(minLeader,session.getAttribute("currentUser"));
                }
                  request.getRequestDispatcher("You Died.jsp").forward(request,response);
-        }
-           if((boolean)session.getAttribute("admin")){
-                String[] changeVal = request.getParameterValues("checkrows");
-                for(String change: changeVal){
-                    session.removeAttribute("leader"+change);
-                    session.removeAttribute("score"+change);
-                    }
+            }}
+            else if(session.getAttribute("admin")!=null){
+                String[] checkbox = request.getParameterValues("checkrows");
+                for(String check: checkbox){
+                    session.removeAttribute("leader"+check);
+                    session.removeAttribute("score"+check);
                 }
-               session.removeAttribute("admin");
-               session.removeAttribute("currentUser");
+                session.removeAttribute("admin");
+                session.removeAttribute("currentUser");
                request.getRequestDispatcher("HomeMenu.jsp").forward(request,response);
-             }
+             }  
+                  session.removeAttribute("currentUser");
+               request.getRequestDispatcher("HomeMenu.jsp").forward(request,response);
+
+        }
+           //Default backup just in case
+        
     }
+ 
         
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

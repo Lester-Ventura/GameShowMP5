@@ -57,11 +57,11 @@ public class QuestionsBanker extends HttpServlet {
             }
             //The person won!  Send to the leaderBoardManager with VictoryFlag set to true.
             else if((int)session.getAttribute("roundNumber")>=10){
-            session.setAttribute("currentScore",scoreCalculator((long)session.getAttribute("currentScore"),(long)session.getAttribute("date"),0));
+            session.setAttribute("currentScore",scoreCalculator((long)session.getAttribute("currentScore"),(long)session.getAttribute("date"),roundCalculator(4,3,3,(int)session.getAttribute("roundNumber"))));
             session.setAttribute("victoryFlag",true);
             request.getRequestDispatcher("leaderBoardManager").forward(request,response);}
             else{
-            session.setAttribute("currentScore",scoreCalculator((long)session.getAttribute("currentScore"),(long)session.getAttribute("date"),0));
+            session.setAttribute("currentScore",scoreCalculator((long)session.getAttribute("currentScore"),(long)session.getAttribute("date"),roundCalculator(4,3,3,(int)session.getAttribute("roundNumber"))));
             session.setAttribute("date",new Date().getTime());
             session.setAttribute("roundNumber",(int)session.getAttribute("roundNumber")+1);
             request.getRequestDispatcher("questionQuiz.jsp").forward(request,response);
@@ -71,9 +71,21 @@ public class QuestionsBanker extends HttpServlet {
     static long scoreCalculator(long currentScore, long date, int diff){
        long curDate = new Date().getTime();
         if((curDate-date)<60000)
-            return currentScore+500+(600-(curDate-date)/100);
+            return currentScore+(500+(600-(curDate-date)/100))*diff;
         else
-            return currentScore+500;
+            return currentScore+500*diff;
+    }
+    static int roundCalculator(int easy,int medium,int hard, int roundNumber){
+        if(roundNumber<=easy){
+            return 1;
+        }
+        if(roundNumber<=easy+medium){
+            return 2;
+        }
+        if(roundNumber<=easy+medium+hard){
+            return 3;
+        }
+        return 1;
     }
     static question[] questionPicker(int easy,int medium,int diff)
     {
