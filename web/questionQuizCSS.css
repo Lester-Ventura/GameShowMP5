@@ -1,3 +1,9 @@
+html{
+    background-image: url(chessBackground.jpg);
+}
+h2{
+    font-size: 40px;
+}
 body{
     display: block;
      margin: 0;
@@ -8,14 +14,23 @@ label:focus{
     background:lightblue;
 }
 label {
- display: flex;
- border:1px solid #ccc;
- min-width: 40%;
- min-height: 40%;
- padding:7px;
- background-color: lightgray;
- margin:0 0 ;
- display:block; 
+    display: inline-block;
+    background-color: #ddd;
+    padding: 5px 10px;
+    font-family: sans-serif, Arial;
+    font-size: 20px;
+    border: 2px solid #444;
+    border-radius: 10px;
+}
+input[type="radio"]:checked + label {
+    background-color:#ddd;
+    border-color: #4c4;
+}
+input[type="radio"]:focus + label {
+    border: 2px dashed #444;
+}
+label:hover {
+  background-color: #dfd;
 }
 h1, p {
   margin: 1em auto;
@@ -26,19 +41,11 @@ input[type=submit]{
     margin-left:auto;
     margin-right:auto;
 }
-input[type=checkbox]+label{
-    color: #ccc;
-  font-style: italic;
-}
-input[type=checkbox]:checked + label{
-    background:blue;   
-}
-label:hover {
- background:#eee;
- cursor:pointer;
-}
-input[type=checkbox]{
-    visibility: visible;
+
+input[type="radio"] {
+  opacity: 1;
+  position: fixed;
+  width: 0;
 }
 img{
   display: block;
@@ -48,10 +55,13 @@ img{
   padding: 5px 5px;
   
 }
+p{
+  font-size: 40px;
+}
 fieldset{
     display: flex;
     max-width: 50%;
-    max-height: 50%;
+     max-height: 50%;
     justify-content: center; 
     align-items: center; 
     margin: auto;
@@ -72,4 +82,12 @@ h2,h4{
   max-width: 1400px;
   margin: 0 auto;
   padding: 20px 10px;
+}
+input[type=submit]{
+     display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+    
 }

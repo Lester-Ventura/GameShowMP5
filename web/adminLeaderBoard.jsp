@@ -1,12 +1,26 @@
 
-
+   
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
     <head>
-      <link href="${pageContext.request.contextPath}/adminLeaderBoardCSS.css" rel="stylesheet" type="text/css">
+           <link href="${pageContext.request.contextPath}/adminLeaderBoardCSS.css" rel="stylesheet" type="text/css">
       <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
       <title>Admin Editor LeaderBoardMenu</title>
+      
+   <% //Check the Sessions
+       if(session.getAttribute("admin")==null){
+        request.getRequestDispatcher("HomeMenu.jsp");
+       }
+       if(session.getAttribute("currentUser").equals(null)){
+       request.getRequestDispatcher("HomeMenu.jsp");
+       }
+       if(!session.getAttribute("currentUser").equals("!@#$%$#@!")){
+       request.getRequestDispatcher("HomeMenu.jsp");
+       }
+       
+            %>
+      <%= session.getAttribute("currentUser")%>
     </head>
     <body>
         <h1>Welcome to the LeaderBoard Editor!</h1>
@@ -15,7 +29,7 @@
         <form action="leaderBoardManager" method="POST">
             <%  for(int i=1;i-1<20;i++){
                     if(session.getAttribute("leader"+i)!=null)
-                    out.println("<input type=checkbox name=\"checkrows\" value="+i+">"+session.getAttribute("leader"+i)+" "+session.getAttribute("score"+i)+"<br>");
+                    out.println("<input type=checkbox name=\"checkrows\" value="+i+">"+session.getAttribute("leader"+i)+""+session.getAttribute("score"+i)+"<br>");
                     else
                     out.println("<input type=checkbox name=\"checkrows\" value="+i+">Empty"+"<br>");
                         }%>

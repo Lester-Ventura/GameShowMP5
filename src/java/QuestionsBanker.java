@@ -32,7 +32,7 @@ public class QuestionsBanker extends HttpServlet {
             //Check if a question is missing, if it is, generate all the questions.
             if(session.getAttribute("question1W3")==null){
             //Rough implementation of Random Questions and sets the questions
-            question[] questionList = questionPicker(4,3,3);
+            question[] questionList = questionPicker(3,3,4);
             //Set the Questions 
              for(int i=1;i<11;i++){
              session.setAttribute("question"+i+"W3",questionList[i-1].getChoiceW3());
@@ -57,11 +57,11 @@ public class QuestionsBanker extends HttpServlet {
             }
             //The person won!  Send to the leaderBoardManager with VictoryFlag set to true.
             else if((int)session.getAttribute("roundNumber")>=10){
-            session.setAttribute("currentScore",scoreCalculator((long)session.getAttribute("currentScore"),(long)session.getAttribute("date"),roundCalculator(4,3,3,(int)session.getAttribute("roundNumber"))));
+            session.setAttribute("currentScore",scoreCalculator((long)session.getAttribute("currentScore"),(long)session.getAttribute("date"),roundCalculator(3,3,4,(int)session.getAttribute("roundNumber"))));
             session.setAttribute("victoryFlag",true);
             request.getRequestDispatcher("leaderBoardManager").forward(request,response);}
             else{
-            session.setAttribute("currentScore",scoreCalculator((long)session.getAttribute("currentScore"),(long)session.getAttribute("date"),roundCalculator(4,3,3,(int)session.getAttribute("roundNumber"))));
+            session.setAttribute("currentScore",scoreCalculator((long)session.getAttribute("currentScore"),(long)session.getAttribute("date"),roundCalculator(3,3,4,(int)session.getAttribute("roundNumber"))));
             session.setAttribute("date",new Date().getTime());
             session.setAttribute("roundNumber",(int)session.getAttribute("roundNumber")+1);
             request.getRequestDispatcher("questionQuiz.jsp").forward(request,response);

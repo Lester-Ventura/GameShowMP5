@@ -2,8 +2,8 @@ html{
     background-image: url(chessBackground.jpg);
     height:100%;
     background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 body{
     font-size: 20px;
@@ -25,6 +25,10 @@ form {
   margin: 0 auto;
   vertical-align: middle;
   padding-bottom: 2em;
+}
+
+.h2{
+ text-align: center;
 }
 .inline{
   display: inline; 
@@ -52,4 +56,10 @@ input[type="text"]{
 }
 .tab{
     white-space: nowrap;
+}
+div.container.leaderBoard{
+    text-align: center;
+    display: inline-block;
+    margin-left: 40%;
+    padding-left: 100px;
 }

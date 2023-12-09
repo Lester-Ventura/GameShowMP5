@@ -44,6 +44,7 @@ public class leaderBoardManager extends HttpServlet {
                  request.getRequestDispatcher("You Died.jsp").forward(request,response);
             }}
             else if(session.getAttribute("admin")!=null){
+                if(request.getParameterValues("checkrows")!=null){
                 String[] checkbox = request.getParameterValues("checkrows");
                 for(String check: checkbox){
                     session.removeAttribute("leader"+check);
@@ -52,7 +53,7 @@ public class leaderBoardManager extends HttpServlet {
                 session.removeAttribute("admin");
                 session.removeAttribute("currentUser");
                request.getRequestDispatcher("HomeMenu.jsp").forward(request,response);
-             }  
+             }  }
                   session.removeAttribute("currentUser");
                request.getRequestDispatcher("HomeMenu.jsp").forward(request,response);
 
