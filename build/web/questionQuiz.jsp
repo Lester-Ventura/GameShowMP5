@@ -22,11 +22,9 @@
             randnum.add("W1");
             randnum.add("correct");
             Collections.shuffle(randnum);%>
-        <%= session.getAttribute("currentUser")%>
-        <%= session.getAttribute("date")%>
         <h2>Round <%= session.getAttribute("roundNumber")%></h2> <h4>Score: <%= session.getAttribute("currentScore") %></h4>
         <img class="questionPicture" src="${pageContext.request.contextPath}/questionPictures/<%= session.getAttribute("question"+session.getAttribute("roundNumber")+"picture")%>.jpg"/> 
-        <p>   <%= session.getAttribute("question"+session.getAttribute("roundNumber")+"desc")%></p>
+        <p><%= session.getAttribute("question"+session.getAttribute("roundNumber")+"desc")%></p>
         
         <form action ="QuestionsBanker" method="POST">
             <div class="flex-boxcenter">
@@ -35,7 +33,6 @@
                     <label for="radio2"><input type="radio" id="radio2" name="radioAns" value=<%= randnum.get(1)%>><%= session.getAttribute("question"+session.getAttribute("roundNumber")+randnum.get(1))%> </label>
                     <label for="radio3"><input type="radio" id="radio3" name="radioAns" value=<%= randnum.get(2)%>><%= session.getAttribute("question"+session.getAttribute("roundNumber")+randnum.get(2))%> </label>
                     <label for="radio4"><input type="radio" id="radio4" name="radioAns" value=<%= randnum.get(3)%>><%= session.getAttribute("question"+session.getAttribute("roundNumber")+randnum.get(3))%> </label>
-              
                         </fieldset>   
                       </div>
                     <input type="submit" value="Answer!">
