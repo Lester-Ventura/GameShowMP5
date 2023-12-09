@@ -26,7 +26,7 @@
     <body>
         <h1 class="title">A Normal Chess Quiz</h1 class="title">
         <form action="loginPage" method="POST">
-        <input type="textbox" placeholder="Enter Username" name="username" required>
+        <input type="textbox" placeholder="Enter Username" name="username" required max="20">
         <input type="submit" value="Enter!">
         </form>
         <div class="leaderBoard">
